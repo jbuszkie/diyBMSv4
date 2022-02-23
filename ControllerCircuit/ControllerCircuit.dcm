@@ -1,3 +1,7 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP PCA9538PW,118
+F https://www.farnell.com/datasheets/2553163.pdf
+$ENDCMP
+#
 #End Doc Library

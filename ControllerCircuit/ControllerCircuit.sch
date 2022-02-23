@@ -25,7 +25,7 @@ F 3 "" H 3680 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ControllerCircuit-rescue:ESP32-DEVKITC-32D-ControllerCircuit U4
+L ControllerCircuit:ESP32-DEVKITC-32D U4
 U 1 1 5F20BE06
 P 14500 1860
 F 0 "U4" H 14500 693 50  0000 C CNN
@@ -92,7 +92,6 @@ Wire Wire Line
 	13345 2760 13345 2160
 Wire Wire Line
 	13345 2160 13700 2160
-Connection ~ 13700 2760
 $Comp
 L power:GND #PWR0111
 U 1 1 5F28E88F
@@ -286,7 +285,7 @@ HSPI_MOSI
 Text Label 3920 4400 2    50   ~ 0
 HSPI_CLK
 $Comp
-L ControllerCircuit-rescue:SN65HVD75DR-ControllerCircuit U5
+L ControllerCircuit:SN65HVD75DR U5
 U 1 1 5F3C4F7B
 P 1375 4010
 F 0 "U5" H 1475 4085 50  0000 C CNN
@@ -401,7 +400,7 @@ RESET
 Text Label 15300 2660 0    50   ~ 0
 RESET
 $Comp
-L ControllerCircuit-rescue:SRD-05VDC-SL-C-ControllerCircuit K1
+L ControllerCircuit:SRD-05VDC-SL-C K1
 U 1 1 5F3296D0
 P 2155 5865
 F 0 "K1" H 2155 6232 50  0000 C CNN
@@ -648,7 +647,7 @@ F 6 "0" H 5870 2255 50  0001 C CNN "JLCPCBRotation"
 	0    1    1    0   
 $EndComp
 $Comp
-L ControllerCircuit-rescue:SRD-05VDC-SL-C-ControllerCircuit K2
+L ControllerCircuit:SRD-05VDC-SL-C K2
 U 1 1 5F496F5F
 P 5155 5975
 F 0 "K2" H 5155 6342 50  0000 C CNN
@@ -903,12 +902,12 @@ F 3 "" H 4350 8425 50  0001 C CNN
 $EndComp
 Text Label 3815 7880 3    50   ~ 0
 TCA9534A_INTA
-Text Label 2715 8050 0    50   ~ 0
+Text Label 2650 8750 0    50   ~ 0
 RELAY1
-Text Label 2715 8150 0    50   ~ 0
+Text Label 2650 8850 0    50   ~ 0
 RELAY2
 $Comp
-L ControllerCircuit-rescue:LCD-ControllerCircuit LCD1
+L ControllerCircuit:LCD LCD1
 U 1 1 5F38B804
 P 3920 3600
 F 0 "LCD1" H 4535 3420 50  0000 L CNN
@@ -925,13 +924,13 @@ Text Label 3920 4000 2    50   ~ 0
 TOUCH_CS
 Text Label 4970 4450 0    50   ~ 0
 SD_CS
-Text Label 610  8000 3    50   ~ 0
+Text Label 550  8700 3    50   ~ 0
 TCA6408A_INTB
-Text Label 2715 7650 0    50   ~ 0
+Text Label 2650 8350 0    50   ~ 0
 EXT_IO_A
-Text Label 2715 7750 0    50   ~ 0
+Text Label 2650 8450 0    50   ~ 0
 EXT_IO_B
-Text Label 2715 7850 0    50   ~ 0
+Text Label 2650 8550 0    50   ~ 0
 EXT_IO_C
 Text Label 4450 2305 2    50   ~ 0
 EXT_IO_A
@@ -1039,7 +1038,7 @@ Text Label 4450 2505 2    50   ~ 0
 EXT_IO_C
 Text Label 4450 2605 2    50   ~ 0
 EXT_IO_D
-Text Label 2715 7950 0    50   ~ 0
+Text Label 2650 8650 0    50   ~ 0
 EXT_IO_D
 Text Label 13700 2260 2    50   ~ 0
 IO21
@@ -1194,77 +1193,36 @@ Wire Wire Line
 	9540 4095 9740 4095
 Text Label 5525 8180 0    50   ~ 0
 CANBUS_S
-Text Label 1315 7650 2    50   ~ 0
+Text Label 1250 8350 2    50   ~ 0
 i2c_SDA
-Text Label 1315 7800 2    50   ~ 0
+Text Label 1250 8500 2    50   ~ 0
 i2c_SCK
-Text Label 1315 8200 2    50   ~ 0
+Text Label 1250 8900 2    50   ~ 0
 RESET
 $Comp
 L power:GND #PWR012
 U 1 1 5F644E4D
-P 1315 8400
-F 0 "#PWR012" H 1315 8150 50  0001 C CNN
-F 1 "GND" H 1320 8227 50  0000 C CNN
-F 2 "" H 1315 8400 50  0001 C CNN
-F 3 "" H 1315 8400 50  0001 C CNN
-	1    1315 8400
+P 650 10050
+F 0 "#PWR012" H 650 9800 50  0001 C CNN
+F 1 "GND" H 655 9877 50  0000 C CNN
+F 2 "" H 650 10050 50  0001 C CNN
+F 3 "" H 650 10050 50  0001 C CNN
+	1    650  10050
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3V3 #PWR014
 U 1 1 5F645856
-P 1765 7350
-F 0 "#PWR014" H 1765 7200 50  0001 C CNN
-F 1 "+3V3" H 1780 7523 50  0000 C CNN
-F 2 "" H 1765 7350 50  0001 C CNN
-F 3 "" H 1765 7350 50  0001 C CNN
-	1    1765 7350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C6
-U 1 1 5F645FB3
-P 1250 9550
-F 0 "C6" V 1502 9550 50  0000 C CNN
-F 1 "100nF" V 1411 9550 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1288 9400 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/YAGEO-CC0805KRX7R9BB104_C49678.pdf" H 1250 9550 50  0001 C CNN
-F 4 "C49678" H 1250 9550 50  0001 C CNN "LCSCStockCode"
-	1    1250 9550
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:GND #PWR013
-U 1 1 5F646917
-P 1440 9550
-F 0 "#PWR013" H 1440 9300 50  0001 C CNN
-F 1 "GND" H 1445 9377 50  0000 C CNN
-F 2 "" H 1440 9550 50  0001 C CNN
-F 3 "" H 1440 9550 50  0001 C CNN
-	1    1440 9550
+P 1700 7300
+F 0 "#PWR014" H 1700 7150 50  0001 C CNN
+F 1 "+3V3" H 1715 7473 50  0000 C CNN
+F 2 "" H 1700 7300 50  0001 C CNN
+F 3 "" H 1700 7300 50  0001 C CNN
+	1    1700 7300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2015 9550 1440 9550
-Wire Wire Line
-	1400 9550 1440 9550
-Connection ~ 1440 9550
-Wire Wire Line
-	1100 9550 1100 9555
-Wire Wire Line
-	1100 9555 820  9555
-Wire Wire Line
-	820  9555 820  7480
-Wire Wire Line
-	820  7350 1765 7350
-Connection ~ 1765 7350
-Wire Wire Line
-	1765 7350 1915 7350
-Text GLabel 2165 7350 2    50   Input ~ 0
-FUSED5V
-Text Notes 1085 10140 0    50   ~ 0
-Provides 5V I/O pins for external \ninterfaces and relays, up to 10mA per port.\n\ni2c address 0x20
+	600  8050 800  8050
 Text Label 9505 4745 2    50   ~ 0
 TCA6408A_INTB
 Text Notes 10465 4840 0    50   ~ 0
@@ -1275,7 +1233,7 @@ U 1 1 5F6B71B8
 P 4750 7980
 F 0 "U8" H 4750 8761 50  0000 C CNN
 F 1 "TCA9534A" H 4750 8670 50  0000 C CNN
-F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 5700 7430 50  0001 C CNN
+F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 5050 6560 50  0001 C CNN
 F 3 "https://www.ti.com/product/TCA9534A" H 4850 7880 50  0001 C CNN
 F 4 "C206010" H 4750 7980 50  0001 C CNN "LCSCStockCode"
 F 5 "TCA9534APWR" H 4750 7980 50  0001 C CNN "PartNumber"
@@ -1283,7 +1241,7 @@ F 5 "TCA9534APWR" H 4750 7980 50  0001 C CNN "PartNumber"
 	1    0    0    -1  
 $EndComp
 Text Notes 4265 9320 0    50   ~ 0
-Provides 3.3V I/O pins for internal\ninterfaces.\n\ni2c address 0x38
+Provides 3.3V I/O pins for internal\ninterfaces.\n\ni2c address 0x38\n\nDrop in PCA9534A Replacement \nDrop in PCA9534PW,118  Replacement (different address)\nDrop in PCA9554A replacement (internal pullups on I/O)\n
 Wire Wire Line
 	4350 8425 4350 8380
 Connection ~ 4350 8280
@@ -1356,56 +1314,54 @@ Wire Wire Line
 	6110 820  6180 820 
 Text Label 5810 820  2    50   ~ 0
 MODULE_TX1
-Text Label 6550 1450 2    50   ~ 0
+Text Label 5850 1350 2    50   ~ 0
 MODULE_RX1
 $Comp
 L power:GND #PWR01
 U 1 1 5CE09E67
-P 6715 1750
-F 0 "#PWR01" H 6715 1500 50  0001 C CNN
-F 1 "GND" H 6720 1577 50  0000 C CNN
-F 2 "" H 6715 1750 50  0001 C CNN
-F 3 "" H 6715 1750 50  0001 C CNN
-	1    6715 1750
+P 6850 1850
+F 0 "#PWR01" H 6850 1600 50  0001 C CNN
+F 1 "GND" H 7000 1750 50  0000 C CNN
+F 2 "" H 6850 1850 50  0001 C CNN
+F 3 "" H 6850 1850 50  0001 C CNN
+	1    6850 1850
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R2
 U 1 1 5CD5BA4A
-P 6715 1600
-F 0 "R2" V 6508 1600 50  0000 C CNN
-F 1 "2K2" V 6599 1600 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 6645 1600 50  0001 C CNN
-F 3 "~" H 6715 1600 50  0001 C CNN
-F 4 "C17520" H 6715 1600 50  0001 C CNN "LCSCStockCode"
-F 5 "0805W8F2201T5E" H 6715 1600 50  0001 C CNN "PartNumber"
-	1    6715 1600
-	-1   0    0    1   
+P 6500 1350
+F 0 "R2" V 6400 1350 50  0000 C CNN
+F 1 "1M" V 6600 1350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6430 1350 50  0001 C CNN
+F 3 "~" H 6500 1350 50  0001 C CNN
+F 4 "C17514" H 6500 1350 50  0001 C CNN "LCSCStockCode"
+F 5 "0805W8F1004T5E" H 6500 1350 50  0001 C CNN "PartNumber"
+	1    6500 1350
+	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	6850 1350 6700 1350
 $Comp
 L Connector:Conn_01x02_Male RX1
 U 1 1 5CD589E5
-P 7050 1450
-F 0 "RX1" H 6860 1330 50  0000 L CNN
-F 1 "Receive" H 6740 1450 50  0000 L CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 7050 1450 50  0001 C CNN
-F 3 "" H 7050 1450 50  0001 C CNN
-F 4 "C157932" H 7050 1450 50  0001 C CNN "LCSCStockCode"
-F 5 "S2B-PH-K-S-GW" H 7050 1450 50  0001 C CNN "PartNumber"
-	1    7050 1450
+P 7200 1700
+F 0 "RX1" H 7010 1580 50  0000 L CNN
+F 1 "Receive" H 6890 1700 50  0000 L CNN
+F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 7200 1700 50  0001 C CNN
+F 3 "" H 7200 1700 50  0001 C CNN
+F 4 "C157932" H 7200 1700 50  0001 C CNN "LCSCStockCode"
+F 5 "S2B-PH-K-S-GW" H 7200 1700 50  0001 C CNN "PartNumber"
+	1    7200 1700
 	-1   0    0    1   
 $EndComp
 $Comp
 L power:+3.3V #PWR0101
 U 1 1 5CD4A0EF
-P 6700 1350
-F 0 "#PWR0101" H 6700 1200 50  0001 C CNN
-F 1 "+3.3V" H 6715 1523 50  0000 C CNN
-F 2 "" H 6700 1350 50  0001 C CNN
-F 3 "" H 6700 1350 50  0001 C CNN
-	1    6700 1350
+P 6650 1250
+F 0 "#PWR0101" H 6650 1100 50  0001 C CNN
+F 1 "+3.3V" H 6800 1350 50  0000 C CNN
+F 2 "" H 6650 1250 50  0001 C CNN
+F 3 "" H 6650 1250 50  0001 C CNN
+	1    6650 1250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1423,7 +1379,7 @@ F 5 "90" H 6480 920 50  0001 C CNN "JLCPCBRotation"
 $EndComp
 Wire Notes Line
 	7585 5175 7585 3665
-Text Notes 5440 1860 0    50   ~ 0
+Text Notes 5450 1950 0    50   ~ 0
 Standard Module comms
 Wire Wire Line
 	2455 5965 2455 6065
@@ -1597,7 +1553,7 @@ Wire Wire Line
 	5485 5975 5485 6175
 Wire Wire Line
 	5485 6175 5455 6175
-Text Label 2715 8250 0    50   ~ 0
+Text Label 2650 8950 0    50   ~ 0
 RELAY3_SSR
 $Comp
 L Relay_SolidState:ASSR-1218 U9
@@ -1650,7 +1606,7 @@ Wire Wire Line
 	3960 1655 4195 1655
 Wire Wire Line
 	4270 950  4270 1340
-Text Label 2715 8350 0    50   ~ 0
+Text Label 2650 9050 0    50   ~ 0
 RELAY4_SSR
 Wire Wire Line
 	5150 8380 5385 8380
@@ -1659,30 +1615,22 @@ Wire Wire Line
 $Comp
 L Device:R R19
 U 1 1 5FC5F324
-P 670 7765
-F 0 "R19" V 590 7765 50  0000 C CNN
-F 1 "10K" V 750 7765 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 600 7765 50  0001 C CNN
-F 3 "~" H 670 7765 50  0001 C CNN
-F 4 "C17414" H 670 7765 50  0001 C CNN "LCSCStockCode"
-F 5 "0805W8F1002T5E" H 670 7765 50  0001 C CNN "PartNumber"
-	1    670  7765
+P 600 8450
+F 0 "R19" V 520 8450 50  0000 C CNN
+F 1 "10K" V 680 8450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 530 8450 50  0001 C CNN
+F 3 "~" H 600 8450 50  0001 C CNN
+F 4 "C17414" H 600 8450 50  0001 C CNN "LCSCStockCode"
+F 5 "0805W8F1002T5E" H 600 8450 50  0001 C CNN "PartNumber"
+	1    600  8450
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	1315 8000 670  8000
+	600  8700 600  8600
 Wire Wire Line
-	670  8000 670  7915
+	550  8700 600  8700
 Wire Wire Line
-	610  8000 670  8000
-Connection ~ 670  8000
-Wire Wire Line
-	670  7615 670  7480
-Wire Wire Line
-	670  7480 820  7480
-Connection ~ 820  7480
-Wire Wire Line
-	820  7480 820  7350
+	600  8300 600  8050
 $Comp
 L Device:R R20
 U 1 1 5FC8DD1E
@@ -1747,7 +1695,7 @@ F 4 "TRUE" H 10800 8055 50  0001 C CNN "DONOTPLACE"
 	-1   0    0    1   
 $EndComp
 $Comp
-L MCU_Microchip_ATtiny:ATtiny841-SSU U10
+L MCU_Microchip_ATtiny:ATtiny841-SS U10
 U 1 1 5FEBE1F3
 P 9365 7955
 F 0 "U10" H 8836 8001 50  0000 R CNN
@@ -1944,7 +1892,6 @@ Wire Wire Line
 	9485 7055 9365 7055
 Wire Wire Line
 	9365 6905 9365 7055
-Connection ~ 9365 7055
 Wire Wire Line
 	10040 6765 9925 6765
 Wire Wire Line
@@ -2131,16 +2078,16 @@ Wire Wire Line
 Wire Wire Line
 	5840 8205 5840 7940
 $Comp
-L ControllerCircuit-rescue:TCA6408AQPWRQ1-ControllerCircuit U3
+L ControllerCircuit:PCA9538PW,118 U3
 U 1 1 5F6428C9
-P 2015 8450
-F 0 "U3" H 2015 7261 50  0000 C CNN
-F 1 "TCA6408APWR" H 2015 7170 50  0000 C CNN
-F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 2215 7450 50  0001 L CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Texas-Instruments-TI-TCA6408APWR_C206177.pdf" H 2215 7350 50  0001 L CNN
-F 4 "C206177" H 2015 8450 50  0001 C CNN "LCSCStockCode"
-F 5 "TCA6408APWR" H 2015 8450 50  0001 C CNN "PartNumber"
-	1    2015 8450
+P 1950 9150
+F 0 "U3" H 2200 8550 50  0000 C CNN
+F 1 "PCA9538PW,118" H 2250 8650 50  0000 C CNN
+F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 2150 8150 50  0001 L CNN
+F 3 "https://www.farnell.com/datasheets/2553163.pdf" H 2150 8050 50  0001 L CNN
+F 4 "C2652289" H 1950 9150 50  0001 C CNN "LCSCStockCode"
+F 5 "PCA9538PW,118" H 1950 9150 50  0001 C CNN "PartNumber"
+	1    1950 9150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -2190,16 +2137,11 @@ Wire Wire Line
 Wire Wire Line
 	4255 6510 4345 6510
 Wire Wire Line
-	6550 1450 6715 1450
-Wire Wire Line
 	3460 2695 3460 2770
 Wire Wire Line
 	3815 7880 3900 7880
 Wire Wire Line
 	10710 8555 10710 8975
-Connection ~ 6715 1450
-Wire Wire Line
-	6715 1450 6850 1450
 Connection ~ 10710 8975
 Wire Wire Line
 	10710 8975 10710 9795
@@ -2692,4 +2634,177 @@ Wire Wire Line
 	7395 4855 7395 4755
 Text Notes 5555 3735 0    79   ~ 16
 MICRO SD CARD
+Wire Wire Line
+	6850 1850 6850 1800
+Wire Wire Line
+	6850 1700 7000 1700
+Wire Wire Line
+	6450 1600 6900 1600
+Wire Wire Line
+	6900 1550 6900 1600
+Connection ~ 6900 1600
+Wire Wire Line
+	6900 1600 7000 1600
+$Comp
+L Device:R R7
+U 1 1 622640CA
+P 6900 1400
+F 0 "R7" H 7000 1550 50  0000 C CNN
+F 1 "2K2" H 7050 1450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6830 1400 50  0001 C CNN
+F 3 "~" H 6900 1400 50  0001 C CNN
+F 4 "C17520" H 6900 1400 50  0001 C CNN "LCSCStockCode"
+F 5 "0805W8F2201T5E" H 6900 1400 50  0001 C CNN "PartNumber"
+	1    6900 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 1250 6900 1250
+$Comp
+L Device:Q_NMOS_GSD Q4
+U 1 1 622B6F43
+P 6250 1600
+F 0 "Q4" H 6455 1646 50  0000 L CNN
+F 1 "AO3400A" H 6455 1555 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6450 1700 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1812111733_Bourne-Semicon-Shenzhen-AO3400A_C344010.pdf" H 6250 1600 50  0001 C CNN
+F 4 "C344010" H 6250 1600 50  0001 C CNN "LCSCStockCode"
+F 5 "AO3400A" H 6250 1600 50  0001 C CNN "PartNumber"
+	1    6250 1600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 1800 6150 1850
+Wire Wire Line
+	6150 1850 6800 1850
+Wire Wire Line
+	6800 1850 6800 1800
+Wire Wire Line
+	6800 1800 6850 1800
+Connection ~ 6850 1800
+Wire Wire Line
+	6850 1800 6850 1700
+Wire Wire Line
+	6650 1350 6650 1250
+Connection ~ 6650 1250
+Wire Wire Line
+	6350 1350 6150 1350
+Wire Wire Line
+	6150 1350 6150 1400
+Wire Wire Line
+	6150 1350 5850 1350
+Connection ~ 6150 1350
+Wire Wire Line
+	600  8700 1250 8700
+Connection ~ 600  8700
+Text GLabel 2250 7350 2    50   Input ~ 0
+FUSED5V
+Wire Wire Line
+	1950 9850 1950 9650
+Wire Wire Line
+	800  8050 800  8800
+Text Notes 1035 10440 0    50   ~ 0
+Provides 5V I/O pins for external \ninterfaces and relays, up to 10mA per port.\n\ni2c address 0x70
+$Comp
+L power:GND #PWR013
+U 1 1 5F646917
+P 1950 9900
+F 0 "#PWR013" H 1950 9650 50  0001 C CNN
+F 1 "GND" H 1955 9727 50  0000 C CNN
+F 2 "" H 1950 9900 50  0001 C CNN
+F 3 "" H 1950 9900 50  0001 C CNN
+	1    1950 9900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 5F645FB3
+P 2700 9500
+F 0 "C6" V 2952 9500 50  0000 C CNN
+F 1 "100nF" V 2861 9500 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2738 9350 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/YAGEO-CC0805KRX7R9BB104_C49678.pdf" H 2700 9500 50  0001 C CNN
+F 4 "C49678" H 2700 9500 50  0001 C CNN "LCSCStockCode"
+	1    2700 9500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	800  8050 800  7350
+Wire Wire Line
+	800  7350 1700 7350
+Wire Wire Line
+	1700 7350 1700 7300
+Connection ~ 800  8050
+Wire Wire Line
+	2250 7350 2200 7350
+Wire Wire Line
+	2200 7350 2200 7750
+Wire Wire Line
+	2200 7750 2150 7750
+Wire Wire Line
+	1750 7750 1700 7750
+Wire Wire Line
+	1700 7750 1700 7350
+Connection ~ 1700 7350
+Wire Wire Line
+	1950 7900 1950 8000
+Text Notes 2100 8000 0    39   ~ 0
+Cut the Jump from 1-2 and \nsolder 2-3 to use the original\nTCA6408APWR\n
+Wire Wire Line
+	650  9300 650  10050
+Wire Wire Line
+	900  8900 900  8800
+Wire Wire Line
+	900  8800 800  8800
+Text Notes 500  9550 0    39   ~ 0
+Cut the Jump from 1-2 and \nsolder 2-3 to use the original\nTCA6408APWR\n
+Wire Wire Line
+	1050 9100 1250 9100
+Wire Wire Line
+	650  9300 900  9300
+$Comp
+L Jumper:SolderJumper_3_Bridged12 JP7
+U 1 1 6291A393
+P 1950 7750
+F 0 "JP7" H 1885 7860 50  0000 C CNN
+F 1 "I/O Volt Select" H 1400 7750 50  0000 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 1950 7750 50  0001 C CNN
+F 3 "~" H 1950 7750 50  0001 C CNN
+	1    1950 7750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_3_Bridged12 JP6
+U 1 1 6291DEF6
+P 900 9100
+F 0 "JP6" H 835 9210 50  0000 C CNN
+F 1 "A0 Volt Select" H 1000 9300 50  0000 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 900 9100 50  0001 C CNN
+F 3 "~" H 900 9100 50  0001 C CNN
+	1    900  9100
+	0    -1   -1   0   
+$EndComp
+Connection ~ 900  9300
+Wire Wire Line
+	900  9300 1250 9300
+Wire Wire Line
+	2700 9650 2700 9850
+Wire Wire Line
+	2700 9850 1950 9850
+Connection ~ 1950 9850
+Wire Wire Line
+	1950 9850 1950 9900
+Wire Wire Line
+	2700 9350 2700 9200
+Wire Wire Line
+	2700 9200 2750 9200
+Text Label 2750 9200 0    50   ~ 0
+U3_PWR
+Text Label 1800 8000 2    50   ~ 0
+U3_PWR
+Wire Wire Line
+	1950 8000 1800 8000
+Connection ~ 1950 8000
+Wire Wire Line
+	1950 8000 1950 8050
 $EndSCHEMATC
