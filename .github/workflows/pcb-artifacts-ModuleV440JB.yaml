@@ -3,22 +3,22 @@ name: pcb-artifacts-Module440JB
 on:
   push:
     paths:
-    - 'Module440JB/**.sch'
-    - 'Module440JB/**.kicad_pcb'
-    - '.github/workflows/pcb-artifacts-esp32-controller.yaml'
+    - 'ModuleV440JB/**.sch'
+    - 'ModuleV440JB/**.kicad_pcb'
+    - '.github/workflows/pcb-artifacts-ModuleV400JB.yaml'
     - '**.kibot.yaml'
   pull_request:
     paths:
     - 'Module440JB/**.sch'
     - 'Module440JB/**.kicad_pcb'
-    - '.github/workflows/pcb-artifacts-esp32-controller.yaml'
+    - '.github/workflows/pcb-artifacts-ModuleV440JB.yaml'
     - '**.kibot.yaml'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 env:
-  repo: stuartpittaway/diyBMSv4
-  main_branch: master
+  repo: jbuszkie/diyBMSv4
+  main_branch: Test
 
 jobs:
   generate-artifacts:
@@ -49,40 +49,40 @@ jobs:
         echo "COMMIT = ${COMMIT}"    
         echo "ref: ${{ github.ref }}"
         echo "default: ${{ env.default }}"
-        sed -i "s!<<hash>>!${COMMIT}!" Module440JB/Module440JB.kicad_pcb
+        sed -i "s!<<hash>>!${COMMIT}!" ModuleV440JB/ModuleV440JB.kicad_pcb
 
     - name: Update the PCBs with the git hash and BETA.
       if: steps.extract_branch.outputs.branch != env.main_branch
       run: |
         export COMMIT=$(git rev-parse --short HEAD)
         echo "COMMIT = ${COMMIT}"
-        sed -i "s!<<hash>>!BETA-${COMMIT}!" Module440JB/Module440JB.kicad_pcb
+        sed -i "s!<<hash>>!BETA-${COMMIT}!" ModuleV440JB/ModuleV440JB.kicad_pcb
 
     - name: Prepare artifacts
       run: |
-        cd Module440JB
+        cd ModuleV440JB
         rm -rf export/
-        kibot -c ../config-2layer.kibot.yaml -e Module440JB.sch -b Module440JB.kicad_pcb -d export
+        kibot -c ../config-2layer.kibot.yaml -e ModuleV440JB.sch -b ModuleV440JB.kicad_pcb -d export
 
     # Splitting this out to ensure a failed kibot run will mark a check as failed.
     - name: Prepare Gerbers artifact
       run: |
-        cd Module440JB/export/gerbers
-        zip -r -j ../Module440JB_gerbers.zip *        
+        cd ModuleV440JB/export/gerbers
+        zip -r -j ../ModuleV440JB_gerbers.zip *        
 
     - name: upload artifacts
       uses: actions/upload-artifact@v2
       if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.repository != env.repo)
       with:
-        name: Module440JB_gerbers
-        path: Module440JB/export/Module440JB_gerbers.zip
+        name: ModuleV440JB_gerbers
+        path: ModuleV440JB/export/ModuleV440JB_gerbers.zip
 
     - name: Commit files
       if: github.event_name == 'push' && github.repository == env.repo
       run: |
-        git add -f Module440JB/export
+        git add -f ModuleV440JB/export
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git status
-        git commit -m "CI: pcb-artifacts-Module440JB"
+        git commit -m "CI: pcb-artifacts-ModuleV440JB"
         git push -u origin
