@@ -17,8 +17,8 @@ on:
   workflow_dispatch:
 
 env:
-  repo: stuartpittaway/diyBMSv4
-  main_branch: master
+  repo: jbuszkie/diyBMSv4
+  main_branch: master2
 
 jobs:
   generate-artifacts:
